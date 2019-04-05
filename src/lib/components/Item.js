@@ -6,7 +6,7 @@ import anime from 'animejs/lib/anime.es';
 var timeOut;
 
 export default class Item {
-    constructor(icon,color, backgroundColor,method,id) {
+    constructor(icon,color, backgroundColor,method,id,tooltipText) {
         this.$element = $(document.createElement("div"));
         this.icon = icon;
         this.$element.addClass("item");
@@ -18,6 +18,9 @@ export default class Item {
 
             method(id,icon);
         })
+
+        this.$element.css('cursor','pointer').attr('title', tooltipText);
+        
         this.$element.append(i);
         this.prev = null;
         this.next = null;

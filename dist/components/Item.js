@@ -9,7 +9,7 @@ import anime from 'animejs/lib/anime.es';
 var timeOut;
 
 var Item = function () {
-    function Item(icon, color, backgroundColor, method, id) {
+    function Item(icon, color, backgroundColor, method, id, tooltipText) {
         _classCallCheck(this, Item);
 
         this.$element = $(document.createElement("div"));
@@ -23,6 +23,9 @@ var Item = function () {
 
             method(id, icon);
         });
+
+        this.$element.css('cursor', 'pointer').attr('title', tooltipText);
+
         this.$element.append(i);
         this.prev = null;
         this.next = null;

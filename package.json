@@ -6,7 +6,14 @@
   "description": "Draggable menu with dynamic options",
   "repository": "TechnologyGeek12/react-draggable-menu",
   "license": "MIT",
+  "homepage": "https://technologygeek12.github.io/react-draggable-menu/",
   "keywords": [
+    "React Draggable Menu",
+    "React Custom Draggable Menu",
+    "React Custom Menu",
+    "React Menu",
+    "React Dynamic Draggable Menu",
+    "React Dynamic Menu",
     "React"
   ],
   "devDependencies": {
