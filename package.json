@@ -1,0 +1,35 @@
+{
+  "name": "react-draggable-menu",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "description": "Draggable menu with dynamic options",
+  "repository": "TechnologyGeek12/react-draggable-menu",
+  "license": "MIT",
+  "keywords": [
+    "React"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
+    "react-test-renderer": "^16.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build-examples": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
+  },
+  "dependencies": {
+    "animejs": "^3.0.1",
+    "jquery": "^3.3.1",
+    "jquery-ui-dist": "^1.12.1"
+  }
+}
