@@ -2,7 +2,7 @@
 Draggable menu with dynamic options to customise it as per user requirements.
 
 <img src="https://img.shields.io/badge/Licence-MIT-blue.svg" alt="Licence" data-canonical-src="https://img.shields.io/badge/Licence-MIT-blue.svg" style="max-width:100%;"/>
-<img src="https://img.shields.io/badge/Version-0.0.1-brightgreen.svg" alt="npm Version" data-canonical-src="https://img.shields.io/badge/Version-0.0.1-brightgreen.svg" style="max-width:100%;"/>
+<img src="https://img.shields.io/badge/Version-0.0.2-brightgreen.svg" alt="npm Version" data-canonical-src="https://img.shields.io/badge/Version-0.0.2-brightgreen.svg" style="max-width:100%;"/>
 
 A Node.js React package that gives draggable menu with dynamic options to make it custom as per user requirment. Also give a better user experience with better and flexible options.
 
@@ -116,7 +116,7 @@ export default App;
 
 ```
 
-## Example to open menu item horizontly (by default it show items vertically)
+## Example to open menu item horizontally (by default it show items vertically)
 
 ```javascript
 import React, { Component } from 'react';
@@ -168,8 +168,29 @@ class App extends Component {
   render() {
     return (
       <DraggableMenu
-      initialPosition= { margin: 'auto', top: 0, right: 0, bottom: 0, left: 0 }
+      initialPosition= {{ margin: 'auto', top: 0, right: 0, bottom: 0, left: 0 }}
       //its default position, you camn change using css in this object
+      />
+    );
+  }
+}
+
+export default App;
+```
+
+## Example to set border color and its style
+
+```javascript
+import React, { Component } from 'react';
+import DraggableMenu from 'react-draggable-menu';
+
+class App extends Component {
+
+  render() {
+    return (
+      <DraggableMenu
+      border={'1px solid #fff'}
+      //you can pass any valid border property in this prop
       />
     );
   }
@@ -374,6 +395,7 @@ export default App;
     closeOnClick: true,
     closeOnSelection: true,
     showMenuOpenForTime: 0,
+    border:'1px solid #fff',
     menuIcon: ["fas fa-bars", '#fff', "#2196f3",0,'Main Menu'],
     menuList: [["fab fa-affiliatetheme", '#fff', "#FBBD3B", 2,'item 1'], ["fas fa-ad", '#fff', "#4185F4", 3,'item 2'], ["fas fa-adjust", '#fff', "#48A853", 4,'item 3'], ["fab fa-adn", '#fff', "#EA4335", 5,'item 4']]
 ```
@@ -393,7 +415,8 @@ export default App;
     closeOnSelection: Boolean,
     showMenuOpenForTime: Number,
     menuIcon: Array,
-    menuList: Arrays
+    menuList: Arrays,
+    border: String,
     isOpen: Function,
     handleChange: Function     
 ```

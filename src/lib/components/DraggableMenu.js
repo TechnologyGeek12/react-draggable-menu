@@ -20,12 +20,12 @@ class DraggableMenu extends Component {
         var menu = new Menu("#draggableMenu", verticalOpen, isCustomCss, this.props.dragToLeftOnly, this.props.dragToRightOnly, this.props.dragToTopOnly, this.props.dragToBottomOnly, this.props.isDraggable, this.isOpen);
 
         if (this.props.menuIcon) {
-            var item1 = new Item(this.props.menuIcon[0], this.props.menuIcon[1], this.props.menuIcon[2], null, this.props.menuIcon[3],this.props.menuIcon[4]);
+            var item1 = new Item(this.props.menuIcon[0], this.props.menuIcon[1], this.props.menuIcon[2], null, this.props.menuIcon[3],this.props.menuIcon[4],this.props.border);
             menu.add(item1);
         }
         if (this.props.menuList) {
             this.props.menuList.map((data, index) => {
-                index = new Item(data[0], data[1], data[2], this.handleChange, data[3],data[4]);
+                index = new Item(data[0], data[1], data[2], this.handleChange, data[3],data[4],this.props.border);
                 menu.add(index);
             });
         }
@@ -93,6 +93,7 @@ DraggableMenu.defaultProps = {
     closeOnClick: true,
     closeOnSelection: true,
     showMenuOpenForTime: 0,
+    border:'1px solid #fff',
     menuIcon: ["fas fa-bars", '#fff', "#2196f3",0,'Main Menu'],
     menuList: [["fab fa-affiliatetheme", '#fff', "#FBBD3B", 2,'item 1'], ["fas fa-ad", '#fff', "#4185F4", 3,'item 2'], ["fas fa-adjust", '#fff', "#48A853", 4,'item 3'], ["fab fa-adn", '#fff', "#EA4335", 5,'item 4']]
     // ["fab fa-affiliatetheme", '#fff', "#FBBD3B", 2], ["fas fa-ad", '#fff', "#4185F4", 3], ["fas fa-adjust", '#fff', "#48A853", 4], ["fab fa-adn", '#fff', "#EA4335", 5]

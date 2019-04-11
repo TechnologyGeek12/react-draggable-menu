@@ -6,7 +6,7 @@ import anime from 'animejs/lib/anime.es';
 var timeOut;
 
 export default class Item {
-    constructor(icon,color, backgroundColor,method,id,tooltipText) {
+    constructor(icon,color, backgroundColor,method,id,tooltipText,border) {
         this.$element = $(document.createElement("div"));
         this.icon = icon;
         this.$element.addClass("item");
@@ -14,12 +14,17 @@ export default class Item {
         var i = document.createElement("i");
         color && $(i).css("color",color);
         $(i).addClass(icon);
-        method && $(i).on('click',function(){
+        method && this.$element.on('click',function(){
 
             method(id,icon);
         })
 
         this.$element.css('cursor','pointer').attr('title', tooltipText);
+        !method && this.$element.css('height','43px');
+        !method && this.$element.css('width','43px');
+        !method && this.$element.css('font-size','25px');
+        this.$element.css('border-radius','50%');
+        border && this.$element.css('border',border);
         
         this.$element.append(i);
         this.prev = null;
